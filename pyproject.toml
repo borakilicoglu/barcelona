@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "barcelona"
+version = "0.1.0"
+description = "barcelona cli!"
+authors = ["borakilicoglu <sbkilicoglu@gmail.com>"]
+license = "MIT"
+repository = "https://github.com/borakilicoglu/barcelona"
+homepage = "https://github.com/borakilicoglu/barcelona"
+readme = "README.md"
+keywords = ["barcelona"]
+classifiers = [
+    "Environment :: Console",
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+include = ["LICENCE", "screenshot.png"]
+packages = [
+    { include = "barcelona" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.28.1"
+rich = "^12.6.0"
+beautifulsoup4 = "^4.11.1"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.scripts]
+barcelona = "barcelona.cli:main"
+
+[tool.poetry.plugins]
+
+[tool.poetry.plugins."barcelona.plugin"]
+"barcelona" = "barcelona.cli:main"
+
+
+[tool.poetry.group.dev.dependencies]
+mkdocs = "^1.4.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
